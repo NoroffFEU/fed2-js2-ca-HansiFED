@@ -18,15 +18,27 @@ export async function register({ name, email, password }) {
       body,
     });
 
+    const result = await response.json();
+
     if (!response.ok) {
+      const userError = (document.getElementById(
+        "userError"
+      ).innerHTML = `${result.errors[0].message}`);
       throw new Error(`Error: ${response.status} ${response.statusText}`);
-      alert(`${response.status} ${response.statusText}`);
     }
 
-    const result = await response.json();
+    if (response.ok) {
+      userError.style.display = "none";
+      document.getElementById(
+        "userSuccess"
+      ).innerHTML = `User was created successfully, we'll now redirect you to the login page`;
+      setTimeout(() => {
+        window.location.href = "/auth/login/";
+      }, 6000);
+    }
+
     return result;
   } catch (error) {
-    console.error("There was an error during registration:", error);
     throw error;
   }
 }
