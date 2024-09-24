@@ -19,12 +19,12 @@ export async function register({ name, email, password }) {
     });
 
     const result = await response.json();
+    console.log(result);
 
     if (!response.ok) {
       const userError = (document.getElementById(
         "userError"
       ).innerHTML = `${result.errors[0].message}`);
-      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
 
     if (response.ok) {
