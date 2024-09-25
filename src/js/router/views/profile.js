@@ -1,6 +1,11 @@
+import { onUpdateProfile } from "../../ui/profile/update";
 import { authGuard } from "../../utilities/authGuard";
-import { buildSignedInUser } from "../../utilities/buildProfile";
+import { buildUser } from "../../utilities/buildProfile";
 
-buildSignedInUser();
+const form = document.forms.updateProfile;
+
+form.addEventListener("submit", onUpdateProfile);
+
+buildUser();
 
 authGuard();

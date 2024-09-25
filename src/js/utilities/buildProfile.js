@@ -1,4 +1,4 @@
-export function buildSignedInUser() {
+export function buildUser() {
   const domBody = document.getElementById("profileBody");
   const createUserBanner = document.createElement("img");
   const createAvatarImg = document.createElement("img");
@@ -11,7 +11,6 @@ export function buildSignedInUser() {
   } else {
     userData = JSON.parse(localStorage.myUserData);
   }
-  console.log(userData);
 
   createUserBanner.src = userData.data.banner.url;
   createUserBanner.setAttribute("alt", userData.data.banner.alt);
