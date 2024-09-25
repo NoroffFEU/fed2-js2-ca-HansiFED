@@ -6,9 +6,6 @@ export async function register({ name, email, password }) {
     name,
     email,
     password,
-    // bio: bio || "",
-    // banner: banner || "",
-    // avatar: avatar || "",
   });
 
   try {

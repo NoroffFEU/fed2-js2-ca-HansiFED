@@ -1,6 +1,6 @@
 // Use Postman, or JavaScript to get your API key
 // In Workflow we will learn how to secure this information
-export const API_KEY = "ee511b9e-5ac0-4293-a171-1fca347cc35d";
+export const API_KEY = "74b3cff5-370d-49fd-85c4-fb7c44c8dbe2";
 
 export const accessToken = localStorage.getItem("accessToken");
 
@@ -19,3 +19,5 @@ export const API_SOCIAL = `${API_BASE}/social`;
 export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
 
 export const API_SOCIAL_PROFILES = `${API_SOCIAL}/profiles`;
+
+export const API_SOCIAL_PROFILES_UPDATE = `${API_SOCIAL}/${localStorage.getItem("userName")}`;

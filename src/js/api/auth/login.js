@@ -33,9 +33,9 @@ export async function login({ email, password }) {
 
     const data = await response.json();
     console.log(data);
-
     localStorage.setItem("accessToken", `${data.data.accessToken}`);
     localStorage.setItem("userName", `${data.data.name}`);
+    localStorage.setItem("myUserData", `${JSON.stringify(data)}`);
   } catch (error) {
     console.log(error);
   }
