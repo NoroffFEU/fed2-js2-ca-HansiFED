@@ -20,6 +20,5 @@ export async function onCreatePost(event) {
       : [],
   };
 
-  console.log("Created Post:", createNewPost);
   createPost(createNewPost);
 }

@@ -11,13 +11,14 @@
 <body>
   <h1>Create Post</h1>
 
-  <form name="createPost">
+  <form name="createPost" id="createPostForm">
     <label for="url">Image URL</label>
     <input type="url" name="url">
-    <label for="title">Post Title </label>
+    <label for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
     <input type="text" name="title" id="">
     <label for="body">Post Content</label>
-    <input type="text" name="body" id="">
+    <textarea type="text" name="body" id="bodyContent" maxlength="10000" rows="12"></textarea>
+
     <label for="tags">Tags</label>
     <input type="text" name="tags" id="">
     <label for="altTag">Image Description</label>
@@ -25,6 +26,11 @@
 
     <button>Create Post</button>
   </form>
+
+  <p id="userSuccess" style="color: green;"> </p>
+  <p id="userError" style="color: red;"> </p>
+
+  <a href="/">Home</a>
 </body>
 
 </html>
