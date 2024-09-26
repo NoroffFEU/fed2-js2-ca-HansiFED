@@ -1,4 +1,4 @@
-export function blogPostBuilder(blogPost) {
+export function blogPostsBuilder(blogPost) {
   let blogPostList = document.querySelector(".blogposts-list");
   blogPostList.innerHTML = "";
 
@@ -9,7 +9,6 @@ export function blogPostBuilder(blogPost) {
     let postContainerBottomHeader = document.createElement("h2");
 
     postContainer.className = "post-container flex-c";
-    postContainer.id = element.id;
     blogPostImage.className = "blogpost-image";
     postContainerBottom.className = "postcontainer-bottom flex-c center-horizontal";
     postContainerBottomHeader.className = "postContainerHeader";
@@ -22,5 +21,8 @@ export function blogPostBuilder(blogPost) {
     postContainer.append(postContainerBottom);
     postContainerBottom.append(postContainerBottomHeader);
     blogPostList.append(postContainer);
+    postContainer.addEventListener("click", async () => {
+      window.location.href = `/post/?id=${element.id}`;
+    });
   });
 }

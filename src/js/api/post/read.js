@@ -1,8 +1,25 @@
-import { blogPostBuilder } from "../../utilities/buildPosts";
+import { blogPostsBuilder } from "../../utilities/buildPosts";
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
-export async function readPost(id) {}
+export async function readSinglePost() {
+  const pageId = new URLSearchParams(window.location.search).get("id");
+  try {
+    const fetchInfo = await fetch(`${API_SOCIAL_POSTS}/${pageId}?_author=true`, {
+      method: "GET",
+      headers: headers(),
+    });
+
+    if (fetchInfo.ok) {
+      const data = await fetchInfo.json();
+      const postData = data.data;
+      console.log("Data being read:", data);
+      return postData;
+    }
+  } catch (error) {
+    alert(error, "Failed to build single post");
+  }
+}
 
 export async function readPosts(limit = 12, page = 1, tag) {
   try {
@@ -17,7 +34,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
 
     console.log(postObjects);
 
-    blogPostBuilder(postObjectsToRender);
+    blogPostsBuilder(postObjectsToRender);
   } catch (error) {
     console.error(error);
   }
