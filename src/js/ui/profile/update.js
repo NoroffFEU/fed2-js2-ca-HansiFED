@@ -6,13 +6,13 @@ export async function onUpdateProfile(event) {
   const formData = new FormData(event.target);
 
   const profileUpdate = {
-    bio: formData.get("bio"),
+    bio: formData.get("bio") ?? "",
     banner: {
-      url: formData.get("banner"),
+      url: formData.get("banner") ?? "",
       alt: "",
     },
     avatar: {
-      url: formData.get("pfp"),
+      url: formData.get("pfp") ?? "",
       alt: "",
     },
   };
