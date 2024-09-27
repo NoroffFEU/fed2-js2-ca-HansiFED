@@ -18,6 +18,10 @@ export const API_SOCIAL = `${API_BASE}/social`;
 
 export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
 
+export const API_SOCIAL_MY_POSTS = `${API_SOCIAL}/profiles/${localStorage.getItem(
+  "userName"
+)}/posts`;
+
 export const API_SOCIAL_PROFILES = `${API_SOCIAL}/profiles`;
 
 export const API_SOCIAL_PROFILES_UPDATE = `${API_SOCIAL_PROFILES}/${localStorage.getItem(

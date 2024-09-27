@@ -21,4 +21,22 @@ export async function buildSinglePost(post) {
   postText.innerText = post.body;
   dateCreated.innerText = `Post Created: ${createdAtFormatted}`;
   updatedTime.innerText = `Post Updated: ${updatedAtFormatted}`;
+
+  if (post.author.name === localStorage.getItem("userName")) {
+    const buttonWrapper = document.createElement("div");
+    const createDeleteButton = document.createElement("button");
+    const createEditButton = document.createElement("button");
+
+    createDeleteButton.innerHTML = "Delete Post";
+    createEditButton.innerHTML = "Edit Post";
+
+    buttonWrapper.append(createEditButton, createDeleteButton);
+
+    document.querySelector("main").append(buttonWrapper);
+
+    createEditButton.addEventListener("click", async () => {
+      const fetchId = new URLSearchParams(window.location.search).get("id");
+      window.location.href = `/post/edit/?id=${fetchId}`;
+    });
+  }
 }

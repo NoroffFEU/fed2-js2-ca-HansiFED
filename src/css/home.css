@@ -1,3 +1,12 @@
+.myBlogPosts-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 .blogposts-list {
   width: 100%;
   display: flex;
