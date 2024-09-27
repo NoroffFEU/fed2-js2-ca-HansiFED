@@ -1,6 +1,6 @@
 import { buildMyPosts } from "../../utilities/buildMyPosts";
 import { blogPostsBuilder } from "../../utilities/buildPosts";
-import { API_SOCIAL_MY_POSTS, API_SOCIAL_POSTS } from "../constants";
+import { API_SOCIAL_MYUSER_POSTS, API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
 export async function readSinglePost() {
@@ -43,7 +43,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
 
 export async function readMyPosts(limit = 6, page = 1, tag) {
   try {
-    const response = await fetch(API_SOCIAL_MY_POSTS, {
+    const response = await fetch(API_SOCIAL_MYUSER_POSTS, {
       method: "GET",
       headers: headers(),
     });

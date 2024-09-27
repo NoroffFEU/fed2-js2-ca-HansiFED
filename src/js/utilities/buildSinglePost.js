@@ -1,3 +1,5 @@
+import { fetchId } from "../api/constants";
+import { deletePost } from "../api/post/delete";
 import { formatDate } from "./formatDate";
 
 export async function buildSinglePost(post) {
@@ -35,8 +37,11 @@ export async function buildSinglePost(post) {
     document.querySelector("main").append(buttonWrapper);
 
     createEditButton.addEventListener("click", async () => {
-      const fetchId = new URLSearchParams(window.location.search).get("id");
       window.location.href = `/post/edit/?id=${fetchId}`;
+    });
+
+    createDeleteButton.addEventListener("click", async () => {
+      await deletePost();
     });
   }
 }

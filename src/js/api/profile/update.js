@@ -15,10 +15,6 @@ export async function updateProfile({ bio, avatar, banner }) {
       body,
     });
 
-    if (!response.ok) {
-      console.log("Could not update", response.status, response.statusText);
-    }
-
     const userData = await fetch(API_SOCIAL_PROFILES_UPDATE, {
       method: "GET",
       headers: headers(),
@@ -27,6 +23,14 @@ export async function updateProfile({ bio, avatar, banner }) {
     const refreshLocalStorage = await userData.json();
 
     localStorage.setItem("myUserData", JSON.stringify(refreshLocalStorage));
+
+    if (response.ok) {
+      window.location.href = "/profile/";
+    }
+
+    if (!response.ok) {
+      console.log("Could not update", response.status, response.statusText);
+    }
 
     // 22-29 should maybe be moved to when I start getting posts for my user on my userpage
 
