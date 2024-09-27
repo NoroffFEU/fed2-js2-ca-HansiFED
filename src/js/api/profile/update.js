@@ -9,15 +9,15 @@ export async function updateProfile({ bio, avatar, banner }) {
   });
 
   try {
+    const userData = await fetch(API_SOCIAL_PROFILES_UPDATE, {
+      method: "GET",
+      headers: headers(),
+    });
+
     const response = await fetch(API_SOCIAL_PROFILES_UPDATE, {
       method: "PUT",
       headers: headers(),
       body,
-    });
-
-    const userData = await fetch(API_SOCIAL_PROFILES_UPDATE, {
-      method: "GET",
-      headers: headers(),
     });
 
     const refreshLocalStorage = await userData.json();
@@ -29,6 +29,7 @@ export async function updateProfile({ bio, avatar, banner }) {
     }
 
     if (!response.ok) {
+      alert(response.status, response.statusText);
       console.log("Could not update", response.status, response.statusText);
     }
 
