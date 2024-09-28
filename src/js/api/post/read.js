@@ -1,12 +1,12 @@
 import { buildMyPosts } from "../../utilities/buildMyPosts";
 import { blogPostsBuilder } from "../../utilities/buildPosts";
-import { API_SOCIAL_MYUSER_POSTS, API_SOCIAL_POSTS } from "../constants";
+import { API_SOCIAL_MY_USER_POSTS, API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
 export async function readSinglePost() {
   const pageId = new URLSearchParams(window.location.search).get("id");
   try {
-    const fetchInfo = await fetch(`${API_SOCIAL_POSTS}/${pageId}?_author=true`, {
+    const fetchInfo = await fetch(`${API_SOCIAL_POSTS}/${pageId}?_author=true&_comments=true`, {
       method: "GET",
       headers: headers(),
     });
@@ -18,7 +18,7 @@ export async function readSinglePost() {
       return postData;
     }
   } catch (error) {
-    alert(error, "Failed to build single post");
+    alert(error, "Failed to read single post");
   }
 }
 
@@ -43,7 +43,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
 
 export async function readMyPosts(limit = 6, page = 1, tag) {
   try {
-    const response = await fetch(API_SOCIAL_MYUSER_POSTS, {
+    const response = await fetch(API_SOCIAL_MY_USER_POSTS, {
       method: "GET",
       headers: headers(),
     });

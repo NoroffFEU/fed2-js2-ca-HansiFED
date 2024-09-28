@@ -1,18 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
 
-  <body>
-    <h1>Edit Post</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
 
-    <form name="editPost">
-      <button>Edit Post</button>
-    </form>
-  </body>
+<body>
+  <h1>Edit Post</h1>
+
+  <form name="editpostform">
+    <label for="url">Image URL</label>
+    <input type="url" name="url" id="urlForm" required>
+
+    <label for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
+    <input type="text" name="title" id="titleForm" required>
+
+    <label for="body">Post Content</label>
+    <textarea type="text" name="body" id="bodyContent" maxlength="10000" rows="12" itemid="postContentForm"></textarea>
+
+    <label for="tags">Tags</label>
+    <input type="text" name="tags" id="tagsForm">
+
+    <label for="altTag">Image Description</label>
+    <input type="text" name="altTag" id="altTagForm">
+
+    <button id="editPostButton">Edit Post</button>
+  </form>
+
+  <p id="errorMessage" style="color: red;"></p>
+  <p id="success" style="color: green;"></p>
+
+</body>
+
 </html>

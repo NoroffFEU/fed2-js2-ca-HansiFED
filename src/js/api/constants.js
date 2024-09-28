@@ -22,7 +22,7 @@ export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
 
 export const API_SOCIAL_SELECTED_POST = `${API_SOCIAL}/posts/${fetchId}`;
 
-export const API_SOCIAL_MYUSER_POSTS = `${API_SOCIAL}/profiles/${localStorage.getItem(
+export const API_SOCIAL_MY_USER_POSTS = `${API_SOCIAL}/profiles/${localStorage.getItem(
   "userName"
 )}/posts`;
 
