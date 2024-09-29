@@ -26,6 +26,4 @@ export async function onLogin(event) {
   const loggedInUserData = Object.fromEntries(new FormData(form));
 
   login(loggedInUserData);
-
-  console.log(loggedInUserData);
 }

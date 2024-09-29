@@ -43,8 +43,6 @@ export async function updatePost({ title, body, tags, media }) {
     const result = await response.json();
 
     if (!response.ok) {
-      console.log(response.status, response.statusText);
-      console.log(response);
       document.getElementById("errorMessage").innerHTML = result.errors[0].message;
     }
 

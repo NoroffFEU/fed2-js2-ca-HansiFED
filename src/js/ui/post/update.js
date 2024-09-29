@@ -23,7 +23,6 @@ export async function onUpdatePost(event) {
   event.preventDefault(); // Prevent default form submission behavior
 
   const formData = Object.fromEntries(new FormData(event.target));
-  console.log(formData, "adwadw");
 
   const updatedPost = {
     title: formData.title,

@@ -32,7 +32,6 @@ export async function deletePost() {
     }
 
     if (response.ok) {
-      console.log("Post Deleted Successfully");
       window.location.href = "/";
       return true;
     } else {

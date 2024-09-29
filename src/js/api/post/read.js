@@ -27,7 +27,7 @@ export async function readSinglePost() {
     if (fetchInfo.ok) {
       const data = await fetchInfo.json();
       const postData = data.data;
-      console.log("Data being read:", data);
+
       return postData;
     }
   } catch (error) {
@@ -62,8 +62,6 @@ export async function readPosts(limit = 12, page = 1, tag) {
     const postObjects = resultJson.data;
     const postObjectsToRender = postObjects.slice(0, limit);
 
-    console.log(postObjects);
-
     blogPostsBuilder(postObjectsToRender);
   } catch (error) {
     console.error(error);
@@ -97,11 +95,10 @@ export async function readMyPosts(limit = 6, page = 1, tag) {
     const postObjects = resultJson.data;
     const postObjectsToRender = postObjects.slice(0, limit);
 
-    console.log(postObjects);
-
     buildMyPosts(postObjectsToRender);
   } catch (error) {
     console.error(error);
+    throw error;
   }
 }
 

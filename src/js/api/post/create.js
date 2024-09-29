@@ -38,10 +38,7 @@ export async function createPost({ title, body, media, tags }) {
       body: postBody,
     });
 
-    console.log(response);
-
     const result = await response.json();
-    console.log(result);
 
     if (!response.ok) {
       const userError = (document.getElementById(

@@ -54,7 +54,6 @@ export async function login({ email, password }) {
     localStorage.setItem("userName", `${data.data.name}`);
     localStorage.setItem("myUserData", `${JSON.stringify(data)}`);
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }

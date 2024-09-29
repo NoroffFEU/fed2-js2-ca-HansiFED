@@ -50,6 +50,10 @@ export async function buildSinglePost(post) {
   dateCreated.innerText = `Post Created: ${createdAtFormatted}`;
   updatedTime.innerText = `Post Updated: ${updatedAtFormatted}`;
 
+  if (createdAt === updatedAt) {
+    updatedTime.style.display = "none";
+  }
+
   if (post.author.name === localStorage.getItem("userName")) {
     const buttonWrapper = document.createElement("div");
     const createDeleteButton = document.createElement("button");

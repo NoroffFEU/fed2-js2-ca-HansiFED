@@ -39,7 +39,6 @@ export async function register({ name, email, password }) {
     });
 
     const result = await response.json();
-    console.log(result);
 
     if (!response.ok) {
       document.getElementById("userError").innerHTML = `${result.errors[0].message}`;

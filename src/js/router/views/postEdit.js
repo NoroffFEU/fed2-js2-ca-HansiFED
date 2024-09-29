@@ -8,7 +8,6 @@ import { prefillEditForms } from "../../utilities/prefillEditForms";
 prefillEditForms();
 
 const form = document.forms.editpostform;
-console.log(form);
 
 form.addEventListener("submit", onUpdatePost);
 

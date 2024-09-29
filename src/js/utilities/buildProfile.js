@@ -37,8 +37,6 @@ export function buildUser() {
     userData = JSON.parse(localStorage.myUserData);
   }
 
-  console.log(userData);
-
   createUserBanner.src = userData.data.banner.url;
   createUserBanner.setAttribute("alt", userData.data.banner.alt);
 

@@ -21,7 +21,6 @@ import { readSinglePost } from "../api/post/read";
 
 export async function prefillEditForms() {
   const data = await readSinglePost();
-  console.log(data);
 
   if (data) {
     document.getElementById("urlForm").value = data.media?.url || "";

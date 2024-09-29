@@ -29,7 +29,6 @@ export async function updateProfile({ bio, avatar, banner }) {
     }
 
     if (!response.ok) {
-      console.log("Could not update", response.status, response.statusText);
       document.getElementById("errorMessage").innerHTML = response.errors[0].message;
     }
 
@@ -37,6 +36,6 @@ export async function updateProfile({ bio, avatar, banner }) {
 
     return response;
   } catch (error) {
-    console.error(error);
+    throw error;
   }
 }
