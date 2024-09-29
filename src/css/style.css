@@ -1,1 +1,6 @@
 @import url(_reset.css);
+@import url(createPost.css);
+@import url(home.css);
+@import url(templates.css);
+@import url(singlePost.css);
+@import url(profilePage.css);

@@ -1,16 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
-  <body>
-    <h1>Create Post</h1>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
+
+<body>
+  <h1>Create Post</h1>
+
+  <form name="createPost" id="createPostForm">
+    <label for="url">Image URL</label>
+    <input type="url" name="url" required>
+    <label for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
+    <input type="text" name="title" id="" required>
+    <label for="body">Post Content</label>
+    <textarea type="text" name="body" id="bodyContent" maxlength="10000" rows="12"></textarea>
+
+    <label for="tags">Tags</label>
+    <input type="text" name="tags" id="">
+    <label for="altTag">Image Description</label>
+    <input type="text" name="altTag" id="">
+
+    <button id="createPostButton">Create Post</button>
+  </form>
+
+  <p id="userSuccess" style="color: green;"> </p>
+  <p id="userError" style="color: red;"> </p>
+
+  <a href="/">Home</a>
+</body>
+
 </html>

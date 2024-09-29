@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
 
-  <body>
-    <h1>Login</h1>
-    <form name="login">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
-      </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-      </div>
+<body>
+  <h1>Login</h1>
+  <form name="login">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+        title="Please enter a valid noroff.no or stud.noroff.no address" />
+      <!-- Re-used the reg-ex already supplied within the '/register/index.html' file, because I thought it would be a nice thing to have here aswell -->
+    </div>
 
-      <a href="/auth/register/">Register</a>
-      <button>Login</button>
-    </form>
-  </body>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+    </div>
+    <a href="/auth/register/">Register</a>
+    <button>Login</button>
+  </form>
+  <p id="userSuccess" style="color: green;"> </p>
+  <p id="userError" style="color: red;"> </p>
+</body>
+
 </html>
