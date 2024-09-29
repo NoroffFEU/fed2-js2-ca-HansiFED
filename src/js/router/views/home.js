@@ -1,18 +1,16 @@
 import { accessToken } from "../../api/constants";
 import { readMyPosts, readPosts } from "../../api/post/read";
-import { onLogout } from "../../ui/auth/logout";
+import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
-
-const button = document.getElementById("logout-button");
-
-button.addEventListener("click", onLogout);
 
 if (accessToken) {
   document.getElementById("loginButton").style.display = "none";
   document.getElementById("registerButton").style.display = "none";
 }
 
+//Reads data and builds the home page accordingly
+
+setLogoutListener();
 readMyPosts();
 readPosts();
-
 authGuard();

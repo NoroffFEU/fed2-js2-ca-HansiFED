@@ -2,6 +2,32 @@ import { fetchId } from "../api/constants";
 import { deletePost } from "../api/post/delete";
 import { formatDate } from "./formatDate";
 
+/**
+ * Builds and displays a single blog post on the page.
+ *
+ * @async
+ * @function buildSinglePost
+ * @param {Object} post - The post object containing all relevant post data.
+ * @param {string} post.title - The title of the blog post.
+ * @param {string} post.body - The content of the blog post.
+ * @param {string} post.media.url - The URL of the post's image.
+ * @param {string} post.media.alt - The alt text for the post's image.
+ * @param {string} post.author.name - The name of the author of the post.
+ * @param {string} post.created - The date the post was created.
+ * @param {string} post.updated - The date the post was last updated.
+ *
+ * @description
+ * This function takes a post object and updates the HTML elements on the page
+ * to display the post's title, content, author, and publication dates.
+ * If the post was created by the currently logged-in user, it also displays
+ * buttons for editing and deleting the post. The function uses `formatDate`
+ * to format the created and updated dates, and handles the click events
+ * for the edit and delete buttons.
+ *
+ * @returns {Promise<void>} Returns a promise that resolves when the post
+ * has been successfully built and displayed.
+ */
+
 export async function buildSinglePost(post) {
   const createdAt = post.created;
   const updatedAt = post.updated;

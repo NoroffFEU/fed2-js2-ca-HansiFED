@@ -1,6 +1,28 @@
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
+/**
+ * Creates a new post by sending a POST request to the social API.
+ *
+ * @async
+ * @function createPost
+ * @param {Object} postDetails - Object containing the details of the post.
+ * @param {string} postDetails.title - The title of the post (required).
+ * @param {string} postDetails.body - The body content of the post (optional).
+ * @param {string} [postDetails.media] - URL to media (optional in the API, but in my case required because that's how I'd like my posts to be).
+ * @param {Array<string>} [postDetails.tags] - Tags associated with the post (optional).
+ *
+ * @description
+ * This function sends a new post request to the API with the provided title, body, media,
+ * and tags. It handles both success and failure by updating the UI to display
+ * success or error messages. If the operation succeeds, the user is redirected to the home page.
+ *
+ * @returns {Promise<Object>} A promise that resolves with the API response object, which contains
+ * the result of the post creation data.
+ *
+ * @throws {Error} If the request fails, the error is thrown.
+ */
+
 export async function createPost({ title, body, media, tags }) {
   const postBody = JSON.stringify({
     title,

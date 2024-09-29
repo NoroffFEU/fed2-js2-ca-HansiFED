@@ -2,6 +2,23 @@ import { API_SOCIAL_SELECTED_POST } from "../api/constants";
 import { headers } from "../api/headers";
 import { readSinglePost } from "../api/post/read";
 
+/**
+ * Prefills the edit form fields with data from a single blog post.
+ *
+ * @async
+ * @function prefillEditForms
+ * @description
+ * This function fetches the data for a single post using the `readSinglePost` function.
+ * If the data is successfully retrieved, it populates the corresponding form fields
+ * with the post's media URL, title, body content, tags, and alternative text.
+ * This is used to allow users to edit their existing blog posts more easily.
+ *
+ * @returns {Promise<void>} A promise that resolves when the form fields have been populated.
+ *
+ * @example
+ * prefillEditForms();
+ */
+
 export async function prefillEditForms() {
   const data = await readSinglePost();
   console.log(data);
@@ -22,33 +39,3 @@ export async function prefillEditForms() {
     tags: document.getElementById("tagsForm").value,
   });
 }
-
-// export async function prefillEditForms() {
-//   try {
-//     const fetchPost = await fetch(API_SOCIAL_SELECTED_POST, {
-//       method: "GET",
-//       headers: headers(),
-//     });
-
-//     if (fetchPost.ok) {
-//       const data = await fetchPost.json();
-//       const postData = data.data;
-
-//       const urlForm = document.getElementById("urlForm");
-//       const postTitleForm = document.getElementById("titleForm");
-//       const postContentForm = document.getElementById("bodyContent");
-//       const tagsForm = document.getElementById("tagsForm");
-//       const imageDescriptionForm = document.getElementById("altTagForm");
-
-//       urlForm.defaultValue = postData.media?.url || "";
-//       postTitleForm.defaultValue = postData.title;
-//       postContentForm.defaultValue = postData?.body || "";
-//       tagsForm.defaultValue = postData?.tags || "";
-//       imageDescriptionForm.defaultValue = postData.media?.alt || "";
-
-//       return postData;
-//     }
-//   } catch (error) {
-//     alert(error, "Failed to read single post");
-//   }
-// }

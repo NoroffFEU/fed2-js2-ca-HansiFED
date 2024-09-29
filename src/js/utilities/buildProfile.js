@@ -1,3 +1,25 @@
+/**
+ * Builds and displays user profile information in the DOM.
+ *
+ * @function buildUser
+ * @description
+ * This function retrieves user data from local storage, creates DOM elements
+ * to display the user's profile information, and appends them to the specified
+ * section of the webpage. It includes the user's banner image, avatar image,
+ * name, and bio. The function checks for a specific user data in local storage
+ * and defaults to another user data if the specific one is not found.
+ * This is so it can be further used with generating other users in the future
+ *
+ * It creates the following elements:
+ * - A banner image for the user's profile
+ * - An avatar image
+ * - The user's name
+ * - The user's bio
+ *
+ * @example
+ * buildUser();
+ */
+
 export function buildUser() {
   const domBody = document.getElementById("profileBody");
   const createUserBanner = document.createElement("img");
