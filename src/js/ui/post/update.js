@@ -1,4 +1,3 @@
-import { fetchId } from "../../api/constants";
 import { updatePost } from "../../api/post/update";
 
 export async function onUpdatePost(event) {
@@ -18,10 +17,4 @@ export async function onUpdatePost(event) {
   };
 
   updatePost(updatedPost);
-
-  document.getElementById("editPostButton").style.display = "none";
-
-  setTimeout(() => {
-    window.location.href = `/post/?id=${fetchId}`;
-  }, 2000);
 }

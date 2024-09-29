@@ -13,9 +13,9 @@
 
   <form name="createPost" id="createPostForm">
     <label for="url">Image URL</label>
-    <input type="url" name="url">
+    <input type="url" name="url" required>
     <label for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
-    <input type="text" name="title" id="">
+    <input type="text" name="title" id="" required>
     <label for="body">Post Content</label>
     <textarea type="text" name="body" id="bodyContent" maxlength="10000" rows="12"></textarea>
 
@@ -24,7 +24,7 @@
     <label for="altTag">Image Description</label>
     <input type="text" name="altTag" id="">
 
-    <button>Create Post</button>
+    <button id="createPostButton">Create Post</button>
   </form>
 
   <p id="userSuccess" style="color: green;"> </p>

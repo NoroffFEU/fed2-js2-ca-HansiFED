@@ -5,6 +5,9 @@ export function buildUser() {
   const createUserName = document.createElement("h2");
   const createUserBio = document.createElement("p");
 
+  createUserBanner.setAttribute("id", "userBanner");
+  createAvatarImg.setAttribute("id", "avatarImg");
+
   let userData;
   if (localStorage.clickedUserData) {
     userData = JSON.parse(localStorage.clickedUserData);

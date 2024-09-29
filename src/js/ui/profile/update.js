@@ -17,5 +17,7 @@ export async function onUpdateProfile(event) {
     },
   };
 
+  console.log(profileUpdate);
+
   updateProfile(profileUpdate);
 }

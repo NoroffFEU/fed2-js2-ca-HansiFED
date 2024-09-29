@@ -29,6 +29,7 @@ export async function createPost({ title, body, media, tags }) {
 
     if (response.ok) {
       userError.style.display = "none";
+      document.getElementById("createPostButton").style.display = "none";
       document.getElementById(
         "userSuccess"
       ).innerHTML = `Post was created successfully, we'll now redirect you to the home page`;

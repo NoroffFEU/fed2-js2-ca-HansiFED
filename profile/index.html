@@ -14,14 +14,14 @@
 
   <form name="updateProfile">
     <label for="banner"> Banner </label>
-    <input type="url" name="banner">
+    <input type="url" name="banner" required maxlength="300">
     <label for="pfp"> Profile Picture </label>
-    <input type="text" name="pfp">
+    <input type="text" name="pfp" required type="url" maxlength="300">
     <label for="bio"> Bio </label>
     <input type="text" name="bio">
-    <button>Update Profile</button>
+    <button id="updateProfileButton">Update Profile</button>
     <p id="errorMessage" style="color: red;"></p>
-    <p id="success" style="color: green;"></p>
+    <p id="successMessage" style="color: green;"></p>
   </form>
 </body>
 
