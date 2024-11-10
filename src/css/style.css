@@ -1,6 +1,24 @@
-@import url(_reset.css);
-@import url(createPost.css);
-@import url(home.css);
-@import url(templates.css);
-@import url(singlePost.css);
-@import url(profilePage.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  @apply text-white p-2 opacity-80;
+}
+
+body {
+  @apply bg-[#1D1D1D];
+  /* font-family: "inter"; */
+}
+
+header {
+  @apply bg-[#534ACB] w-full pl-8 pr-8 pt-4 pb-4 flex flex-row justify-between;
+}
+
+footer {
+  @apply bg-[#141414] w-full p-3;
+}
+
+a {
+  @apply cursor-pointer;
+}

@@ -9,26 +9,38 @@
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body>
-  <h1>Login</h1>
-  <form name="login">
-    <div>
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-        title="Please enter a valid noroff.no or stud.noroff.no address" />
-      <!-- Re-used the reg-ex already supplied within the '/register/index.html' file, because I thought it would be a nice thing to have here aswell -->
-    </div>
+<body class="flex flex-col min-h-screen">
+  <header>
+    <img src="/images/noroff-logo.png" alt="Noroff Logo" class="ml-2 w-48 h-30" />
+  </header>
+  <main class="flex-grow flex flex-col items-center justify-center w-full">
+    <img src="/images/noroffIcon.svg" class="mb-5" alt="">
+    <form class="flex flex-col gap-8 max-w-[600px] w-[80%]" name="login">
+      <div class="flex flex-col gap-4">
+        <label class="text-xl text-white" for="email">Email</label>
+        <input class="text-l p-3 rounded-lg" id="email" type="email" name="email" required
+          pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Please enter a valid noroff.no or stud.noroff.no address" />
+        <!-- Re-used the reg-ex already supplied within the '/register/index.html' file, because I thought it would be a nice thing to have here aswell -->
+      </div>
+      <div class="flex flex-col gap-4">
+        <label class="text-xl text-white" for="password">Password</label>
+        <input class="text-l p-3 rounded-lg" type="password" name="password" id="password" required />
+      </div>
+      <button
+        class="bg-[#534ACB] pt-3 pb-3 mt-5 px-6 rounded-xl hover:scale-[1.02] cursor-pointer transition duration-200">Login</button>
+      <p class="text-center" id="userSuccess" style="color: green;"> </p>
+      <p class="text-center" id="userError" style="color: red;"> </p>
+      <div class="flex flex-col items-center gap-8 mt-40 mb-10 text-white">
+        <p> Don't have an account?</p>
+        <a class="bg-[#151515] pt-3 pb-3 px-6 rounded-xl hover:scale-[1.10] cursor-pointer transition duration-200"
+          href="/auth/register/">Register now</a>
+      </div>
+    </form>
+  </main>
 
-
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required />
-    </div>
-    <a href="/auth/register/">Register</a>
-    <button>Login</button>
-  </form>
-  <p id="userSuccess" style="color: green;"> </p>
-  <p id="userError" style="color: red;"> </p>
+  <footer class="p-7">
+    <p class="text-white items-start text-center flex-grow">©HansiFED</p>
+  </footer>
 </body>
 
 </html>

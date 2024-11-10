@@ -10,26 +10,75 @@
 </head>
 
 <body>
-  <h1>Post Page</h1>
+  <header class="z-20 flex flex-col items-center gap-10 sm:flex-row">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo"
+        class="ml-2 w-48 h-30 hover:scale-[1.10] transition duration-200" /></a>
+    <div class="flex flex-col items-center gap-10 text-white sm:flex-row">
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" href="/profile/">
+          <img id="profilePicture" class="w-6 h-6 rounded-full object-cover" src="" alt="My profile icon">
+          <p>My Profile</p>
+        </a>
+      </div>
+      <a href="/auth/login/" id="loginButton">Login</a>
+      <a href="/auth/register/" id="registerButton">Register</a>
+      <div class="flex items-center hover:scale-[1.10] cursor-pointer transition duration-200">
+        <a class="flex gap-2 items-center" href="/post/create/">
+          <img class="" src="/images/create-post-icon.svg" alt="Create Post Icon">
+          <p>Create Post</p>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" id="logout-button">
+          <img src="/images/signout-icon.svg" alt="">
+          <p>Logout</p>
+        </a>
+      </div>
+  </header>
+  <main class="flex flex-col items-center">
+    <div class="blogpage-image-container w-full max-w-[1200px] flex flex-col">
+      <img class="blogpage-image h-[20%] w-full object-cover max-w-[1200px] max-h-[600px] z-20" src=""
+        alt="big blogpost">
+      <div class=" w-[95%] self-center p-3 max-w-[1200px] sm:w-full">
+        <div class="headTextWrapper flex">
+          <p id="postAuthor" class="text-white text-xs mt-10"> Post Author </p>
+        </div>
+        <div class="postWrapper flex flex-col">
+          <h1 id="postHeaderTitle" class="text-center text-white my-10 text-3xl"> Placeholder title </h1>
+          <div id="bodyAndEmojiWrapper" class="flex flex-col p-10 w-full text-white mb-3 mt-5 bg-[#151515]">
+            <p id="blogpost-text" class=""></p>
+            <div id="emojiRow" class="flex justify-end mt-4">
 
-  <main>
-    <div class="blogpage-image-container flex-r center-vertical">
-      <img class="blogpage-image" src="#" alt="big blogpost">
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-between text-white underblogpost mb-10">
+            <p class="text-xs" id="publicationDate"> Publication Date </p>
+            <p class="text-xs" id="updatedTime"> Updated Time </p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="headTextWrapper flex-r center-vertical">
-      <h1 id="postHeaderTitle"> Placeholder title </h1>
-    </div>
-    <div class="blogpage-textcontainer flex-c">
-      <p id="postAuthor"> Post Author </p>
-      <p id="blogpost-text">
-      </p>
-      <div class="flex-r center-horizontal underblogpost">
-        <p id="publicationDate"> Publication Date </p>
-        <p id="updatedTime"> Updated Time </p>
+    <div id="commentsWrapper" class="w-full max-w-[1200px] p-4">
+      <h2 id="commentsHeader" class="text-2xl text-white mt-10"> </h2>
+      <div id="commentContainer" class="flex flex-col gap-10 object-cover">
       </div>
     </div>
+    <div class="w-full flex flex-col max-w-[1200px] mt-20 items-center justify-center" id="formWrapper">
+      <h2 class="text-white text-2xl mb-6 "> Write a comment: </h2>
+      <form id="submitCommentForm" class="w-[95%] sm:w-full p-3" action="">
+        <label for="commentField"></label>
+        <textarea class="w-full p-2 h-[200px] resize-none rounded-xl" name="commentField" id="commentField"></textarea>
+        <button id="submitCommentButton"
+          class="bg-[#534ACB] w-full max-w-[150px] rounded-xl mt-6 hover:scale-[1.10] transition duration-200 ">
+          Post Comment </button>
+      </form>
+
+    </div>
   </main>
-  <a href="/">Home</a>
+  <footer class="p-7">
+    <p class="text-white items-start text-center">©HansiFED</p>
+  </footer>
 </body>
 
 </html>

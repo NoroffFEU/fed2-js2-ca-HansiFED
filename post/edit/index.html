@@ -9,30 +9,63 @@
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body>
-  <h1>Edit Post</h1>
+<body class="flex flex-col min-h-screen">
+  <header class="flex flex-col items-center gap-10 sm:flex-row">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo"
+        class="ml-2 w-48 h-30 hover:scale-[1.10] transition duration-200" /></a>
+    <div class="flex flex-col items-center gap-10 text-white sm:flex-row">
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" href="/profile/">
+          <img id="profilePicture" class="w-6 h-6 rounded-full object-cover" src="" alt="My profile icon">
+          <p>My Profile</p>
+        </a>
+      </div>
+      <a href="/auth/login/" id="loginButton">Login</a>
+      <a href="/auth/register/" id="registerButton">Register</a>
+      <div class="flex items-center hover:scale-[1.10] cursor-pointer transition duration-200">
+        <a class="flex gap-2 items-center" href="/post/create/">
+          <img class="" src="/images/create-post-icon.svg" alt="Create Post Icon">
+          <p>Create Post</p>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" id="logout-button">
+          <img src="/images/signout-icon.svg" alt="">
+          <p>Logout</p>
+        </a>
+      </div>
+  </header>
+  <main class="flex flex-col items-center flex-grow justify-center w-full p-10 my-20 sm:my-44 sm:p-10">
+    <h1 class="text-white text-3xl">Edit Post</h1>
 
-  <form name="editpostform">
-    <label for="url">Image URL</label>
-    <input type="url" name="url" id="urlForm" required>
+    <form class="flex flex-col gap-5 mt-10 w-full max-w-[1200px]" name="editpostform">
+      <label class="text-lg text-white" for="url">Image URL</label>
+      <input class=" p-3 rounded-lg" type="url" name="url" id="urlForm" required>
 
-    <label for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
-    <input type="text" name="title" id="titleForm" required>
+      <label class="text-lg text-white" for="title" placeholder="Enter post title" maxlength="60">Post Title </label>
+      <input class=" p-3 rounded-lg" type="text" name="title" id="titleForm" required>
 
-    <label for="body">Post Content</label>
-    <textarea type="text" name="body" id="bodyContent" maxlength="10000" rows="12" itemid="postContentForm"></textarea>
+      <label class="text-lg text-white" for="body">Post Content</label>
+      <textarea class=" p-3 rounded-lg" type="text" name="body" id="bodyContent" maxlength="10000" rows="12"
+        itemid="postContentForm"></textarea>
 
-    <label for="tags">Tags</label>
-    <input type="text" name="tags" id="tagsForm">
+      <label class="text-lg text-white" for="tags">Tags</label>
+      <input class=" p-3 rounded-lg" type="text" name="tags" id="tagsForm">
 
-    <label for="altTag">Image Description</label>
-    <input type="text" name="altTag" id="altTagForm">
+      <label class="text-lg text-white" for="altTag">Image Description</label>
+      <input class=" p-3 rounded-lg" type="text" name="altTag" id="altTagForm">
 
-    <button id="editPostButton">Edit Post</button>
-  </form>
+      <button
+        class="bg-[#534ACB] pt-3 pb-3 mt-5 px-6 rounded-xl hover:scale-[1.02] cursor-pointer transition duration-200"
+        id="editPostButton">Edit Post</button>
+    </form>
 
-  <p id="errorMessage" style="color: red;"></p>
-  <p id="userSuccess" style="color: green;"></p>
+    <p id="errorMessage" style="color: red;"></p>
+    <p id="userSuccess" style="color: green;"></p>
+  </main>
+  <footer class="p-7">
+    <p class="text-white items-start text-center">©HansiFED</p>
+  </footer>
 
 </body>
 

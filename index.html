@@ -7,30 +7,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noroff FED2 JS2 CA</title>
   <script type="module" src="/src/app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+<body class='flex flex-col min-h-screen'>
+  <header class="flex flex-col items-center gap-10 sm:flex-row">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo"
+        class="ml-2 w-48 h-30 hover:scale-[1.10] transition duration-200" /></a>
+    <div class="flex flex-col items-center gap-10 text-white sm:flex-row">
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" href="/profile/">
+          <img id="profilePicture" class="w-6 h-6 rounded-full object-cover" src="" alt="My profile icon">
+          <p>My Profile</p>
+        </a>
+      </div>
+      <a href="/auth/login/" id="loginButton">Login</a>
+      <a href="/auth/register/" id="registerButton">Register</a>
+      <div class="flex items-center hover:scale-[1.10] cursor-pointer transition duration-200">
+        <a class="flex gap-2 items-center" href="/post/create/">
+          <img class="" src="/images/create-post-icon.svg" alt="Create Post Icon">
+          <p>Create Post</p>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" id="logout-button">
+          <img src="/images/signout-icon.svg" alt="">
+          <p>Logout</p>
+        </a>
+      </div>
+  </header>
 
-  <h1>Home</h1>
+  <main>
+    <h2 class="text-white text-3xl mt-16 text-start ml-5">My Latest Posts:</h2>
+    <ul class="myBlogPosts-list w-full flex flex-wrap gap-10 justify-center mt-[50px]">
+    </ul>
+    <h2 class="text-white text-3xl mt-10 text-start ml-5"> All Blogposts: </h2>
+    <li class="blogposts-list w-full flex flex-wrap gap-10 justify-center mt-[50px]"></li>
+  </main>
 
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/" id="loginButton">Login</a>
-  <a href="/auth/register/" id="registerButton">Register</a>
-  <a href="/post/create/"> Create Post </a>
-  <button id="logout-button">Logout</button>
-  <h2>My Latest Posts</h2>
-  <ul class="myBlogPosts-list">
-  </ul>
-  <h2> All Blogposts </h2>
-  <li class="blogposts-list"></li>
+  <footer class="p-5 sm:p-3">
+    <ul id="paginationDiv" class="flex justify-center hidden sm:block sm:text-center">
+      <button class="hover:scale-105 transition duration-200"> First Page </button>
+      <button class="hover:scale-105 transition duration-200"> Previous Page </button>
+      <button class="hover:scale-105 transition duration-200"> Next Page </button>
+      <button class="hover:scale-105 transition duration-200"> Last Page </button>
+    </ul>
+    <p class="text-white items-start text-center">©HansiFED</p>
+  </footer>
 
-  <ul>
-    <button> First Page </button>
-    <button> Previous Page </button>
-    <button> Next Page </button>
-    <button> Last Page </button>
-  </ul>
+
 </body>
 
 </html>

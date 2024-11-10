@@ -9,20 +9,52 @@
   <script type="module" src="/src/app.js"></script>
 </head>
 
-<body id="profileBody">
-  <h1>Profile</h1>
-
-  <form name="updateProfile">
-    <label for="banner"> Banner </label>
-    <input type="url" name="banner" required maxlength="300">
-    <label for="pfp"> Profile Picture </label>
-    <input type="text" name="pfp" required type="url" maxlength="300">
-    <label for="bio"> Bio </label>
-    <input type="text" name="bio">
-    <button id="updateProfileButton">Update Profile</button>
-    <p id="errorMessage" style="color: red;"></p>
-    <p id="successMessage" style="color: green;"></p>
-  </form>
+<body class="flex flex-col min-h-screen" id="profileBody">
+  <header class="z-20 flex flex-col items-center gap-10 sm:flex-row">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo"
+        class="ml-2 w-48 h-30 hover:scale-[1.10] transition duration-200" /></a>
+    <div class="flex flex-col items-center gap-10 text-white sm:flex-row">
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" href="/profile/">
+          <img id="profilePicture" class="w-6 h-6 rounded-full object-cover" src="" alt="My profile icon">
+          <p>My Profile</p>
+        </a>
+      </div>
+      <a href="/auth/login/" id="loginButton">Login</a>
+      <a href="/auth/register/" id="registerButton">Register</a>
+      <div class="flex items-center hover:scale-[1.10] cursor-pointer transition duration-200">
+        <a class="flex gap-2 items-center" href="/post/create/">
+          <img class="" src="/images/create-post-icon.svg" alt="Create Post Icon">
+          <p>Create Post</p>
+        </a>
+      </div>
+      <div class="flex items-center gap-2 hover:scale-[1.10] transition duration-200">
+        <a class="flex gap-2 items-center" id="logout-button">
+          <img src="/images/signout-icon.svg" alt="">
+          <p>Logout</p>
+        </a>
+      </div>
+  </header>
+  <main class="flex flex-col items-center flex-grow justify-center">
+    <div id="profileWrapper" class="flex justify-center">
+      <form class="flex flex-col gap-2 mb-20 p-5" name="updateProfile">
+        <label class="text-lg text-white" for="banner"> Banner </label>
+        <input class=" p-3 rounded-lg" type="url" name="banner" required maxlength="300">
+        <label class="text-lg text-white" for="pfp"> Profile Picture </label>
+        <input class=" p-3 rounded-lg" type="text" name="pfp" required type="url" maxlength="300">
+        <label class="text-lg text-white" for="bio"> Bio </label>
+        <input class=" p-3 rounded-lg" type="text" name="bio">
+        <button
+          class="bg-[#534ACB] pt-3 pb-3 mt-5 px-6 rounded-xl hover:scale-[1.02] cursor-pointer transition duration-200"
+          id="updateProfileButton">Submit Changes </button>
+        <p id="errorMessage" style="color: red;"></p>
+        <p id="successMessage" style="color: green;"></p>
+      </form>
+    </div>
+  </main>
+  <footer class="p-7">
+    <p class="text-white items-start text-center flex-grow">©HansiFED</p>
+  </footer>
 </body>
 
 </html>

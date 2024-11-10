@@ -1,6 +1,10 @@
 import { buildMyPosts } from "../../utilities/buildMyPosts";
 import { blogPostsBuilder } from "../../utilities/buildPosts";
-import { API_SOCIAL_MY_USER_POSTS, API_SOCIAL_POSTS } from "../constants";
+import {
+  API_SOCIAL_POSTS_MORE_INFO,
+  API_SOCIAL_MY_USER_POSTS_COMMENTS_AND_REACTIONS,
+  API_SOCIAL_POSTS,
+} from "../constants";
 import { headers } from "../headers";
 
 /**
@@ -19,10 +23,13 @@ import { headers } from "../headers";
 export async function readSinglePost() {
   const pageId = new URLSearchParams(window.location.search).get("id");
   try {
-    const fetchInfo = await fetch(`${API_SOCIAL_POSTS}/${pageId}?_author=true&_comments=true`, {
-      method: "GET",
-      headers: headers(),
-    });
+    const fetchInfo = await fetch(
+      `${API_SOCIAL_POSTS}/${pageId}?_author=true&_comments=true&_reactions=true`,
+      {
+        method: "GET",
+        headers: headers(),
+      }
+    );
 
     if (fetchInfo.ok) {
       const data = await fetchInfo.json();
@@ -53,7 +60,7 @@ export async function readSinglePost() {
 
 export async function readPosts(limit = 12, page = 1, tag) {
   try {
-    const response = await fetch(API_SOCIAL_POSTS, {
+    const response = await fetch(API_SOCIAL_POSTS_MORE_INFO, {
       method: "GET",
       headers: headers(),
     });
@@ -86,7 +93,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
 
 export async function readMyPosts(limit = 6, page = 1, tag) {
   try {
-    const response = await fetch(API_SOCIAL_MY_USER_POSTS, {
+    const response = await fetch(API_SOCIAL_MY_USER_POSTS_COMMENTS_AND_REACTIONS, {
       method: "GET",
       headers: headers(),
     });
